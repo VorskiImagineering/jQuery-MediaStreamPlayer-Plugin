@@ -10,10 +10,11 @@ transitions are used when switching between players.
 ## Questions
 * what about handling of resizing? 
 
-## Main Classes
+## Classes
 
-### class MediaStream
-Returns an endless stream of MediaItems
+### interface MediaStream
+Returns an endless stream of MediaItems... Could also have some sort of a push
+registration mechanism so it can push items to the MediaStreamPlayer?
 
 ### class MediaStreamPlayer
 
@@ -22,14 +23,17 @@ The main class, it does a slideshow of MediaPlayers based on the MediaStream it 
 Pre-loads players 
 Uses a MediaPlayerPool to re-use MediaPlayers as much as possible.
  
+### interface MediaItem
+A MediaItem interface some set of media, could be one video, could be a set of photos, could be a live video stream. Only useful if there is a MediaPlayer which knows how to play this MediaItem.
 
-### class MediaItem
-A MediaItem models some set of media, could be one video, could be a set of photos, could be a live video stream. Only useful if there is a MediaPlayer which knows how to play this MediaItem.
-
-### class MediaPlayer
+### interface MediaPlayer
 Knows how to play a MediaItem into a DOM element.
 
 A specific implementation of this exists for each video (photo, etc.) site we support.
+
+### interface Transition
+
+Does a transition between two MediaPlayers
 
 ### class MediaPlayerPool
  Manages a pool of MediaPlayers, up to two per media type. Automatically creates MediaPlayers if there are not sufficient ones.
@@ -58,6 +62,7 @@ A  media item implementation for youtube.
 A player for YouTube movies.
 
 
+## Implementation ideas.
 
 ```
 /* A Media stream is an endless iterator over MediaItems. 
@@ -279,7 +284,7 @@ events:
 /* If player return error we should make some action, ex.: delete problem item from collection and go to the next it */
 	onError(errorType) - 
 	
-'''
+```
 
 ## Debugging
 For debugging use something like this backbone.debug.js
