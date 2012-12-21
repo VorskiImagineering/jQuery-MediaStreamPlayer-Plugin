@@ -1,4 +1,4 @@
-# Status: Planning
+### Status: Planning
 # jQuery MediaStreamPlayer Plugin
 
 Open source jQuery plugin for the continuous slideshow of media (videos, photos, live streams, etc.)  

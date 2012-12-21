@@ -1,4 +1,63 @@
-## Javascript API
+### Status: Planning
+# jQuery MediaStreamPlayer Plugin implementation architecture
+
+## Overview
+
+The basic idea is very simple. The MediaStreamPlayer calls next() on a MediaStream getting items to be played.
+For each item it uses a MediaPlayer to display the videos. In order to create a smooth viewing experience 
+transitions are used when switching between players. 
+
+## Questions
+* what about handling of resizing? 
+
+## Main Classes
+
+### class MediaStream
+Returns an endless stream of MediaItems
+
+### class MediaStreamPlayer
+
+The main class, it does a slideshow of MediaPlayers based on the MediaStream it gets...
+
+Pre-loads players 
+Uses a MediaPlayerPool to re-use MediaPlayers as much as possible.
+ 
+
+### class MediaItem
+A MediaItem models some set of media, could be one video, could be a set of photos, could be a live video stream. Only useful if there is a MediaPlayer which knows how to play this MediaItem.
+
+### class MediaPlayer
+Knows how to play a MediaItem into a DOM element.
+
+A specific implementation of this exists for each video (photo, etc.) site we support.
+
+### class MediaPlayerPool
+ Manages a pool of MediaPlayers, up to two per media type. Automatically creates MediaPlayers if there are not sufficient ones.
+
+Question: how do we manage this? do we require an explicit returnPlayer() to return the player to be available? Or for the first implementation do we just go with two players always returned in order 1,2,1,2...
+
+### class RandomMediaStream
+
+A helper class, takes an array of MediaItems and returns them in random order forever, however making sure that the same item is never played twice in a row. 
+
+### class LoopMediaStream
+
+A helper class, takes an array of MediaItems and returns them in order forever, looping around to start when it gets to the end.
+
+### class CrossMediaStream
+
+A helper class, **composition of multiple media streams**, takes a set of MediaStreams and returns MediaItems from them in random order.
+
+
+### class YouTubeMediaItem
+
+A  media item implementation for youtube.
+
+### class YouTubeMediaPlayer
+
+A player for YouTube movies.
+
+
 
 ```
 /* A Media stream is an endless iterator over MediaItems. 
