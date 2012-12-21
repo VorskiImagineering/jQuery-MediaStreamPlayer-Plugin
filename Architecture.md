@@ -35,7 +35,11 @@ A specific implementation of this exists for each video (photo, etc.) site we su
 
 Does a transition between two MediaPlayers
 
-### class MediaPlayerPool
+### class SlideTransition
+
+### class FadeTransition
+
+MediaPlayerPool
  Manages a pool of MediaPlayers, up to two per media type. Automatically creates MediaPlayers if there are not sufficient ones.
 
 Question: how do we manage this? do we require an explicit returnPlayer() to return the player to be available? Or for the first implementation do we just go with two players always returned in order 1,2,1,2...
