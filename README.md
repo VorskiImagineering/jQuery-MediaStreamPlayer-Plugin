@@ -7,12 +7,21 @@ with pluggable media modules including: youtube, vimeo,
 Other projects implement plugins for playing media streams such as:
 instagram, flickr, facebook-photo, ustream.
 
-
-## Demo
-We've got a handy demo up at http://vorski.com/MediaStreamPlayer/
+## Features
+* fills specified DOM element
+* supports resize
+* Auto adjust to DOM element size when DOM element resizes
+* Pluggable media players eventually including:
+** youtube
+** vimeo
+** dailymotion
+** instagram
+** flickr
+** facebook - photo
+** PluggableMediaPlayers - Additional Media players can be developed in separate projects 
+* No player Chrome - the plugin does not create any chrome of it’s own and players disable other site chrome in so far as possible
 
 ## Getting Started
-Download "Cowboy" Ben Alman's [JavaScript Linkify - v0.3](https://raw.github.com/cowboy/javascript-linkify/master/ba-linkify.min.js).
 
 Download the [production version][min] or the [development version][max] of jQuery.MediaStreamPlayer.
 
@@ -33,6 +42,16 @@ In the browser:
     $('player').mediastreamplayer(mediastream)
 </script>
 ```
+## YouTube MediaPlayer
+YouTube is the only MediaPlayer included in this release.
+
+The YouTube media player provides media items such that
+## Demo
+We've got a handy demo up at http://vorski.com/MediaStreamPlayer/
+
+## Developing MediaPlayer plugin
+
+See [MediaPlayerDevelopment.md].
 
 ## Contributing
 This project generally follows [Idiomatic.js](https://github.com/rwldrn/idiomatic.js) from Rick Waldron, take care to maintain the existing coding style. 
