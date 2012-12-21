@@ -12,13 +12,13 @@ instagram, flickr, facebook-photo, ustream.
 * supports resize
 * Auto adjust to DOM element size when DOM element resizes
 * Pluggable media players eventually including:
-** youtube
-** vimeo
-** dailymotion
-** instagram
-** flickr
-** facebook - photo
-** PluggableMediaPlayers - Additional Media players can be developed in separate projects 
+	* youtube
+	* vimeo
+	* dailymotion
+	* instagram
+	* flickr
+	* facebook - photo
+	* PluggableMediaPlayers - Additional Media players can be developed in separate projects 
 * No player Chrome - the plugin does not create any chrome of it’s own and players disable other site chrome in so far as possible
 
 ## Getting Started
@@ -42,16 +42,13 @@ In the browser:
     $('player').mediastreamplayer(mediastream)
 </script>
 ```
-## YouTube MediaPlayer
-YouTube is the only MediaPlayer included in this release.
+## YouTube MediaPlayer Plugin
+The YouTube media player allows you to create media 
 
-The YouTube media player provides media items such that
+
 ## Demo
 We've got a handy demo up at http://vorski.com/MediaStreamPlayer/
 
-## Developing MediaPlayer plugin
-
-See [MediaPlayerDevelopment.md].
 
 ## Contributing
 This project generally follows [Idiomatic.js](https://github.com/rwldrn/idiomatic.js) from Rick Waldron, take care to maintain the existing coding style. 
@@ -68,7 +65,6 @@ Licensed under the LGPL license http://www.gnu.org/licenses/lgpl-3.0.txt
 
 jQuery... 
 
-This project is built with "Cowboy" Ben Alman's [Grunt](https://github.com/cowboy/grunt).
 
 ## Authors
 
